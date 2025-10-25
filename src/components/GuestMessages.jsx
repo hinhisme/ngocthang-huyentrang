@@ -5,7 +5,7 @@ const GuestMessages = () => {
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
-    fetch("/api/rsvp")
+    fetch("https://wedding-rsvp-server-z9at.onrender.com")
       .then((res) => res.json())
       .then((data) => setMessages(data))
       .catch((err) => console.error("Lỗi khi tải lời chúc:", err));
