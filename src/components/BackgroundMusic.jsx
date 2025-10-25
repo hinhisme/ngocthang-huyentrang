@@ -10,14 +10,18 @@ const BackgroundMusic = () => {
     const audio = audioRef.current;
     if (!audio) return;
 
+    // ⚡ Preload nhạc trước để tránh delay khi click
+    const preload = new Audio("/music/ido.mp3");
+    preload.preload = "auto";
+    preload.load();
+
     audio.volume = 0.7;
 
-    // Khi người dùng chạm/lần đầu click → phát nhạc
     const enablePlay = () => {
       audio.play().then(() => {
         setIsPlaying(true);
         setUserInteracted(true);
-      }).catch(err => {
+      }).catch((err) => {
         console.warn("⚠️ Autoplay bị chặn:", err);
       });
     };
@@ -31,7 +35,6 @@ const BackgroundMusic = () => {
     };
   }, []);
 
-  // Bật / tắt nhạc
   const togglePlay = () => {
     const audio = audioRef.current;
     if (!audio) return;
@@ -81,7 +84,7 @@ const BackgroundMusic = () => {
                 setUserInteracted(true);
                 setIsPlaying(true);
               })
-              .catch(err => console.warn("Không thể phát nhạc:", err));
+              .catch((err) => console.warn("Không thể phát nhạc:", err));
           }}
           className="fixed bottom-5 right-5 z-50 bg-pink-500 text-white p-3 rounded-full shadow-lg animate-bounce hover:bg-pink-600 transition"
         >
