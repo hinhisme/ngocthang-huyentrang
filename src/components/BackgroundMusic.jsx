@@ -2,58 +2,92 @@ import React, { useEffect, useRef, useState } from "react";
 import { Volume2, VolumeX } from "lucide-react";
 
 const BackgroundMusic = () => {
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [userInteracted, setUserInteracted] = useState(false);
   const audioRef = useRef(null);
 
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
 
-    const tryPlay = () => {
-      audio.volume = 0.7;
-      audio.play().catch((err) => {
-        console.warn("⛔ Autoplay bị chặn, chờ tương tác:", err);
+    audio.volume = 0.7;
+
+    // Khi người dùng chạm/lần đầu click → phát nhạc
+    const enablePlay = () => {
+      audio.play().then(() => {
+        setIsPlaying(true);
+        setUserInteracted(true);
+      }).catch(err => {
+        console.warn("⚠️ Autoplay bị chặn:", err);
       });
     };
 
-    tryPlay();
-    document.addEventListener("click", tryPlay, { once: true });
-    document.addEventListener("touchstart", tryPlay, { once: true });
+    document.addEventListener("click", enablePlay, { once: true });
+    document.addEventListener("touchstart", enablePlay, { once: true });
 
     return () => {
-      document.removeEventListener("click", tryPlay);
-      document.removeEventListener("touchstart", tryPlay);
+      document.removeEventListener("click", enablePlay);
+      document.removeEventListener("touchstart", enablePlay);
     };
   }, []);
 
-  useEffect(() => {
+  // Bật / tắt nhạc
+  const togglePlay = () => {
     const audio = audioRef.current;
     if (!audio) return;
 
     if (isPlaying) {
-      audio.play().catch(() => {});
-    } else {
       audio.pause();
+      setIsPlaying(false);
+    } else {
+      audio.play().then(() => setIsPlaying(true));
     }
-  }, [isPlaying]);
+  };
 
   return (
     <>
-      {/* 🎵 Nhạc nền tự động phát */}
-      <audio ref={audioRef} loop preload="auto" src="/music/ido.mp3" />
+      {/* Nhạc nền */}
+      <audio
+        ref={audioRef}
+        loop
+        preload="auto"
+        playsInline
+        src="/music/ido.mp3"
+      />
 
-      {/* 🔊 Nút bật/tắt âm thanh */}
-      <button
-        onClick={() => setIsPlaying(!isPlaying)}
-        className="fixed bottom-5 right-5 z-50 bg-white/80 p-3 rounded-full shadow-lg hover:bg-white transition"
-        title={isPlaying ? "Tắt nhạc" : "Bật nhạc"}
-      >
-        {isPlaying ? (
-          <Volume2 className="text-pink-600" size={24} />
-        ) : (
-          <VolumeX className="text-gray-500" size={24} />
-        )}
-      </button>
+      {/* Nút bật/tắt nhạc */}
+      {userInteracted && (
+        <button
+          onClick={togglePlay}
+          className="fixed bottom-5 right-5 z-50 bg-white/80 p-3 rounded-full shadow-lg hover:bg-white transition"
+          title={isPlaying ? "Tắt nhạc" : "Bật nhạc"}
+        >
+          {isPlaying ? (
+            <Volume2 className="text-pink-600" size={24} />
+          ) : (
+            <VolumeX className="text-gray-500" size={24} />
+          )}
+        </button>
+      )}
+
+      {/* Nếu chưa tương tác lần nào, hiển thị nút “Bắt đầu nhạc” */}
+      {!userInteracted && (
+        <button
+          onClick={() => {
+            const audio = audioRef.current;
+            if (!audio) return;
+            audio.play()
+              .then(() => {
+                setUserInteracted(true);
+                setIsPlaying(true);
+              })
+              .catch(err => console.warn("Không thể phát nhạc:", err));
+          }}
+          className="fixed bottom-5 right-5 z-50 bg-pink-500 text-white p-3 rounded-full shadow-lg animate-bounce hover:bg-pink-600 transition"
+        >
+          Bật nhạc 🎵
+        </button>
+      )}
     </>
   );
 };
