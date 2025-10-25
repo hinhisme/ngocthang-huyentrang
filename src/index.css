@@ -1,0 +1,37 @@
+/* 🌸 Import font phải đặt TRƯỚC TẤT CẢ */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Be+Vietnam+Pro:wght@300;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 🌿 Cấu hình font và màu nền tổng thể */
+@layer base {
+  body {
+    @apply bg-accent-light text-gray-800;
+    font-family: 'Be Vietnam Pro', sans-serif;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Cormorant Garamond', serif;
+  }
+}
+
+/* 🪶 Hiệu ứng rơi */
+@keyframes fall {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.animate-fall {
+  position: absolute;
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
