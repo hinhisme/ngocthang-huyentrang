@@ -5,7 +5,7 @@ const GuestMessages = () => {
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/rsvp")
+    fetch("/api/rsvp")
       .then((res) => res.json())
       .then((data) => setMessages(data))
       .catch((err) => console.error("Lỗi khi tải lời chúc:", err));
