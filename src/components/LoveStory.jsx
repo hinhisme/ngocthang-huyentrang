@@ -3,7 +3,7 @@ import ScrollReveal from "./ScrollReveal";
 export default function LoveStory() {
   const stories = [
     {
-      text: "Giữa mùi hương dịu của thuốc và nụ cười thân quen ở hiệu thuốc Long Châu, chúng tôi tìm thấy liều thuốc ngọt ngào nhất – chính là tình yêu.",
+      text: "Chẳng ai ngờ giữa hàng trăm toa thuốc ở Long Châu, chúng tôi lại kê đơn trúng… tình yêu.",
       image: "/images/story1.jpg",
     },
     {
