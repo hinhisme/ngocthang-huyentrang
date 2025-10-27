@@ -16,7 +16,7 @@ export default function Header() {
         <h2 className="text-3xl md:text-5xl font-playfair mb-4">
           Ngọc Thắng & Huyền Trang
         </h2>
-        <p className="text-lg md:text-xl font-playfair">Save The Date • 30.11.2025</p>
+        <p className="text-lg md:text-xl font-playfair">Save The Date • 09.11.2025</p>
       </div>
       </ScrollReveal>
       <div className="absolute bottom-8 text-white animate-bounce">

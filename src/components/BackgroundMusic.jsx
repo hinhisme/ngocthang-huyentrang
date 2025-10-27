@@ -10,7 +10,6 @@ const BackgroundMusic = () => {
     const audio = audioRef.current;
     if (!audio) return;
 
-    // ⚡ Preload nhạc trước để tránh delay khi click
     const preload = new Audio("/music/ido.mp3");
     preload.preload = "auto";
     preload.load();
@@ -49,7 +48,6 @@ const BackgroundMusic = () => {
 
   return (
     <>
-      {/* Nhạc nền */}
       <audio
         ref={audioRef}
         loop
@@ -58,7 +56,6 @@ const BackgroundMusic = () => {
         src="/music/ido.mp3"
       />
 
-      {/* Nút bật/tắt nhạc */}
       {userInteracted && (
         <button
           onClick={togglePlay}
@@ -73,7 +70,6 @@ const BackgroundMusic = () => {
         </button>
       )}
 
-      {/* Nếu chưa tương tác lần nào, hiển thị nút “Bắt đầu nhạc” */}
       {!userInteracted && (
         <button
           onClick={() => {

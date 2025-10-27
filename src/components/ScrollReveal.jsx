@@ -4,7 +4,7 @@ const ScrollReveal = ({
   children,
   className = "",
   delay = 0,
-  direction = "up", // up | down | left | right
+  direction = "up",
 }) => {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);
@@ -27,7 +27,6 @@ const ScrollReveal = ({
     return () => observer.disconnect();
   }, [delay]);
 
-  // Xác định hướng trượt
   const directionClass = {
     up: "translate-y-10",
     down: "-translate-y-10",

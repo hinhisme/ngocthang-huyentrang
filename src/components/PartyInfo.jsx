@@ -20,7 +20,7 @@ export default function PartyInfo() {
             ĐƯỢC TỔ CHỨC VÀO
           </p>
           <p className="font-playfair text-gray-800 mb-4">
-            16h30 - Thứ 7, 30/11/2025
+            16h30 - Thứ 7, 08/11/2025
           </p>
 
           <p className="font-playfair text-gray-700 mb-2">TẠI ĐỊA ĐIỂM</p>
@@ -50,7 +50,7 @@ export default function PartyInfo() {
             ĐƯỢC TỔ CHỨC VÀO
           </p>
           <p className="font-playfair text-gray-800 mb-4">
-            16h30 - Thứ 7, 30/11/2025
+            16h30 - Thứ 7, 08/11/2025
           </p>
 
           <p className="font-playfair text-gray-700 mb-2">TẠI ĐỊA ĐIỂM</p>
