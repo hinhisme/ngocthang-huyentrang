@@ -3,22 +3,18 @@ import ScrollReveal from "./ScrollReveal";
 export default function LoveStory() {
   const stories = [
     {
-      date: "Tháng 6/2020",
       text: "Lần đầu gặp nhau tại quán cà phê nhỏ giữa lòng Hà Nội.",
       image: "/images/story1.jpg",
     },
     {
-      date: "2021",
       text: "Những chuyến đi xa, những kỷ niệm khó quên.",
       image: "/images/story2.jpg",
     },
     {
-      date: "2023",
       text: "Lời tỏ tình giản dị nhưng đầy chân thành.",
       image: "/images/story3.jpg",
     },
     {
-      date: "2025",
       text: "Chúng ta nói lời ước hẹn trăm năm ❤️",
       image: "/images/story4.jpg",
     },
