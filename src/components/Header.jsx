@@ -33,7 +33,6 @@ export default function Header() {
         <span className="text-sm opacity-80">Cuộn xuống để xem thiệp</span>
       </div>
 
-      {/* Hiệu ứng động nhỏ */}
       <style>{`
         @keyframes fade-in {
           from { opacity: 0; transform: translateY(20px); }
