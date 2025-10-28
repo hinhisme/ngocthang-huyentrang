@@ -21,7 +21,7 @@ export default function Header() {
 
       {/* Nội dung chính */}
       <ScrollReveal direction="up" delay={200}>
-        <div className="relative z-10 text-center text-white drop-shadow-lg px-8 py-6 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20">
+        <div className="relative z-10 text-center text-white drop-shadow-lg px-8 py-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10">
           <p className="text-3xl font-['Great_Vibes'] text-pink-200 mb-3 animate-fade-in">
             Save The Date
           </p>
