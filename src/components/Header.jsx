@@ -4,24 +4,20 @@ import Countdown from "./Countdown";
 export default function Header() {
   return (
     <header className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden bg-pink-50">
-      {/* Ảnh nền với hiệu ứng zoom chậm */}
       <img
         src="/images/header.jpg"
         alt="Ảnh cưới"
         className="absolute inset-0 w-full h-full object-cover brightness-75 animate-slow-zoom"
       />
 
-      {/* Lớp phủ gradient */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
 
-      {/* Các hạt sáng lung linh */}
       <div className="absolute w-2 h-2 bg-white/50 rounded-full animate-twinkle left-[35%] top-[40%]" />
       <div className="absolute w-1.5 h-1.5 bg-pink-100/70 rounded-full animate-twinkle-slow left-[65%] top-[30%]" />
       <div className="absolute w-1.5 h-1.5 bg-white/50 rounded-full animate-twinkle-slow left-[50%] top-[55%]" />
 
-      {/* Nội dung chính */}
       <ScrollReveal direction="up" delay={200}>
-        <div className="relative z-10 text-center text-white drop-shadow-lg px-8 py-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10">
+        <div className="relative z-10 text-center text-white drop-shadow-lg px-8 py-6 bg-white/10 backdrop-blur-[4px] rounded-2xl border border-white/10 shadow-[0_4px_60px_rgba(255,255,255,0.1)]">
           <p className="text-3xl font-['Great_Vibes'] text-pink-200 mb-3 animate-fade-in">
             Save The Date
           </p>
@@ -38,7 +34,6 @@ export default function Header() {
         </div>
       </ScrollReveal>
 
-      {/* Hướng dẫn cuộn */}
       <div className="absolute bottom-8 text-white text-center animate-bounce">
         <span className="text-sm opacity-80 flex items-center gap-2 justify-center">
           <svg
@@ -55,7 +50,6 @@ export default function Header() {
         </span>
       </div>
 
-      {/* CSS động */}
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
