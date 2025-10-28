@@ -17,7 +17,7 @@ export default function Header() {
       <div className="absolute w-1.5 h-1.5 bg-white/50 rounded-full animate-twinkle-slow left-[50%] top-[55%]" />
 
       <ScrollReveal direction="up" delay={200}>
-        <div className="relative z-10 text-center text-white drop-shadow-lg px-8 py-6 bg-white/10 backdrop-blur-[4px] rounded-2xl border border-white/10 shadow-[0_4px_60px_rgba(255,255,255,0.1)]">
+        <div className="relative z-10 text-center text-white drop-shadow-lg px-8 py-6 bg-white/3 backdrop-blur-[4px] rounded-2xl border border-white/10 shadow-[0_4px_60px_rgba(255,255,255,0.1)]">
           <p className="text-3xl font-['Great_Vibes'] text-pink-200 mb-3 animate-fade-in">
             Save The Date
           </p>
