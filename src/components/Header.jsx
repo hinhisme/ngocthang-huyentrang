@@ -22,22 +22,21 @@ export default function Header() {
         <div className="absolute w-1.5 h-1.5 bg-white/70 rounded-full animate-twinkle delay-4000 left-[35%] top-[70%]" />
       </div>
 
-      {/* Main content */}
       <ScrollReveal direction="up" delay={200}>
-        <div className="relative z-10 text-center px-8 py-6 bg-white/10 backdrop-blur-lg rounded-2xl shadow-2xl border border-white/20 max-w-2xl">
-          <p className="text-3xl font-['Great_Vibes'] text-pink-200 mb-3 animate-fade-in drop-shadow-lg tracking-wide">
+        <div className="relative z-10 text-center px-8 py-6 bg-white/5 backdrop-blur-md rounded-2xl shadow-2xl border border-white/10 max-w-3xl">
+          <p className="text-3xl font-['Great_Vibes'] text-pink-200 mb-2 animate-fade-in drop-shadow-lg">
             Save The Date
           </p>
 
-          <h1 className="text-5xl md:text-7xl font-playfair font-semibold bg-clip-text text-transparent bg-gradient-to-r from-rose-200 via-white to-pink-200 animate-gradient drop-shadow-lg leading-tight">
-            Ngọc Thắng<br />& Huyền Trang
+          <h1 className="text-5xl md:text-7xl font-playfair font-semibold bg-clip-text text-transparent bg-gradient-to-r from-pink-200 via-white to-pink-100 animate-gradient drop-shadow-md leading-snug">
+            Ngọc Thắng & Huyền Trang
           </h1>
 
-          <p className="text-lg md:text-xl font-light mt-4 text-pink-100 animate-fade-in tracking-wider">
+          <p className="text-lg md:text-xl font-light mt-3 text-pink-100 animate-fade-in">
             09 • 11 • 2025
           </p>
 
-          <div className="mt-6">
+          <div className="mt-5">
             <Countdown targetDate={new Date('2025-11-09T00:00:00')} />
           </div>
         </div>
