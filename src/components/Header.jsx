@@ -26,7 +26,7 @@ export default function Header() {
             Save The Date
           </p>
 
-          <h1 className="text-5xl md:text-7xl font-playfair font-semibold bg-clip-text text-transparent bg-gradient-to-r from-pink-200 via-white to-pink-100 animate-gradient">
+          <h1 className="text-4xl md:text-6xl font-playfair font-semibold bg-gradient-to-r from-pink-200 via-white to-pink-100 bg-clip-text text-transparent animate-slide-up">
             Ngọc Thắng & Huyền Trang
           </h1>
 
