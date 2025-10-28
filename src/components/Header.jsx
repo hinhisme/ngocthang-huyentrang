@@ -23,7 +23,7 @@ export default function Header() {
       </div>
 
       <ScrollReveal direction="up" delay={200}>
-        <div className="relative z-10 text-center px-8 py-6 bg-white/5 backdrop-blur-md rounded-2xl shadow-2xl border border-white/10 max-w-3xl">
+        <div className="relative z-10 text-center px-8 py-6 bg-white/5 bg-transparent backdrop-blur-[2px] rounded-2xl shadow-2xl border border-white/10 max-w-3xl">
           <p className="text-3xl font-['Great_Vibes'] text-pink-200 mb-2 animate-fade-in drop-shadow-lg">
             Save The Date
           </p>
