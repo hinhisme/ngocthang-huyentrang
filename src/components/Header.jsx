@@ -3,41 +3,73 @@ import Countdown from "./Countdown";
 
 export default function Header() {
   return (
-    <header className="relative w-full h-screen bg-pink-50 flex flex-col items-center justify-center overflow-hidden">
+    <header className="relative w-full h-screen overflow-hidden flex flex-col items-center justify-center bg-gradient-to-b from-pink-50 via-rose-100 to-white">
+      {/* Background image with soft zoom and fade */}
       <img
         src="/images/header.jpg"
         alt="Ảnh cưới"
         className="absolute inset-0 w-full h-full object-cover brightness-75 scale-105 animate-slow-zoom"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
 
+      {/* Gradient overlay for romantic mood */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+
+      {/* Floating light particles */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute w-2 h-2 bg-white/60 rounded-full animate-twinkle delay-1000 left-[20%] top-[40%]" />
+        <div className="absolute w-1.5 h-1.5 bg-pink-200/70 rounded-full animate-twinkle delay-2000 left-[50%] top-[20%]" />
+        <div className="absolute w-2 h-2 bg-rose-100/70 rounded-full animate-twinkle delay-3000 left-[80%] top-[60%]" />
+        <div className="absolute w-1.5 h-1.5 bg-white/70 rounded-full animate-twinkle delay-4000 left-[35%] top-[70%]" />
+      </div>
+
+      {/* Main content */}
       <ScrollReveal direction="up" delay={200}>
-        <div className="relative z-10 text-center text-white px-6">
-          <p className="text-3xl font-['Great_Vibes'] text-pink-200 mb-3 animate-fade-in drop-shadow-lg">
+        <div className="relative z-10 text-center px-8 py-6 bg-white/10 backdrop-blur-lg rounded-2xl shadow-2xl border border-white/20 max-w-2xl">
+          <p className="text-3xl font-['Great_Vibes'] text-pink-200 mb-3 animate-fade-in drop-shadow-lg tracking-wide">
             Save The Date
           </p>
 
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl px-8 py-6 shadow-xl border border-white/20 inline-block">
-            <h1 className="text-4xl md:text-6xl font-playfair font-semibold bg-clip-text text-transparent bg-gradient-to-r from-pink-100 via-white to-pink-200 animate-gradient">
-              Ngọc Thắng & Huyền Trang
-            </h1>
+          <h1 className="text-5xl md:text-7xl font-playfair font-semibold bg-clip-text text-transparent bg-gradient-to-r from-rose-200 via-white to-pink-200 animate-gradient drop-shadow-lg leading-tight">
+            Ngọc Thắng<br />& Huyền Trang
+          </h1>
 
-            <p className="text-lg md:text-xl font-light mt-4 text-pink-100 animate-fade-in">
-              09 • 11 • 2025
-            </p>
+          <p className="text-lg md:text-xl font-light mt-4 text-pink-100 animate-fade-in tracking-wider">
+            09 • 11 • 2025
+          </p>
 
-            <Countdown targetDate={new Date("2025-11-09T00:00:00")} />
+          <div className="mt-6">
+            <Countdown targetDate={new Date('2025-11-09T00:00:00')} />
           </div>
         </div>
       </ScrollReveal>
 
-      <div className="absolute bottom-8 text-white text-center animate-bounce">
+      {/* Scroll hint */}
+      <div className="absolute bottom-8 text-white text-center animate-bounce z-20">
         <span className="text-sm opacity-80">Cuộn xuống để xem thiệp</span>
       </div>
 
       <style>{`
+        /* Soft zoom animation */
+        @keyframes slow-zoom {
+          from { transform: scale(1); }
+          to { transform: scale(1.08); }
+        }
+        .animate-slow-zoom {
+          animation: slow-zoom 25s ease-in-out infinite alternate;
+        }
+
+        /* Floating light sparkles */
+        @keyframes twinkle {
+          0%, 100% { opacity: 0; transform: translateY(0); }
+          50% { opacity: 1; transform: translateY(-10px); }
+        }
+        .animate-twinkle {
+          animation: twinkle 5s ease-in-out infinite;
+        }
+
+        /* Fade-in and gradient shimmer */
         @keyframes fade-in {
-          from { opacity: 0; transform: translateY(20px); }
+          from { opacity: 0; transform: translateY(30px); }
           to { opacity: 1; transform: translateY(0); }
         }
         .animate-fade-in {
@@ -51,14 +83,6 @@ export default function Header() {
         .animate-gradient {
           background-size: 200%;
           animation: gradient 6s ease infinite;
-        }
-
-        @keyframes slow-zoom {
-          from { transform: scale(1); }
-          to { transform: scale(1.05); }
-        }
-        .animate-slow-zoom {
-          animation: slow-zoom 20s ease-in-out infinite alternate;
         }
       `}</style>
     </header>
