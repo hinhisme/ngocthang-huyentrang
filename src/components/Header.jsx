@@ -4,26 +4,27 @@ import Countdown from "./Countdown";
 export default function Header() {
   return (
     <header className="relative w-full h-screen overflow-hidden flex flex-col items-center justify-center bg-gradient-to-b from-pink-50 via-rose-100 to-white">
-      {/* Background image with soft zoom and fade */}
+      {/* Background image */}
       <img
         src="/images/header.jpg"
         alt="Ảnh cưới"
         className="absolute inset-0 w-full h-full object-cover brightness-75 scale-105 animate-slow-zoom"
       />
 
-      {/* Gradient overlay for romantic mood */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+      {/* Overlay gradient for mood */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
 
-      {/* Floating light particles */}
+      {/* Floating sparkles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute w-2 h-2 bg-white/60 rounded-full animate-twinkle delay-1000 left-[20%] top-[40%]" />
-        <div className="absolute w-1.5 h-1.5 bg-pink-200/70 rounded-full animate-twinkle delay-2000 left-[50%] top-[20%]" />
-        <div className="absolute w-2 h-2 bg-rose-100/70 rounded-full animate-twinkle delay-3000 left-[80%] top-[60%]" />
+        <div className="absolute w-2 h-2 bg-white/50 rounded-full animate-twinkle delay-1000 left-[15%] top-[35%]" />
+        <div className="absolute w-1.5 h-1.5 bg-pink-200/70 rounded-full animate-twinkle delay-2000 left-[50%] top-[25%]" />
+        <div className="absolute w-2 h-2 bg-rose-100/70 rounded-full animate-twinkle delay-3000 left-[75%] top-[55%]" />
         <div className="absolute w-1.5 h-1.5 bg-white/70 rounded-full animate-twinkle delay-4000 left-[35%] top-[70%]" />
       </div>
 
+      {/* Main content */}
       <ScrollReveal direction="up" delay={200}>
-        <div className="relative z-10 text-center px-8 py-6 bg-white/5 bg-transparent backdrop-blur-[2px] rounded-2xl shadow-2xl border border-white/10 max-w-3xl">
+        <div className="relative z-10 text-center px-10 py-8 bg-white/5 backdrop-blur-md rounded-3xl shadow-2xl border border-white/10 max-w-3xl">
           <p className="text-3xl font-['Great_Vibes'] text-pink-200 mb-2 animate-fade-in drop-shadow-lg">
             Save The Date
           </p>
@@ -32,12 +33,12 @@ export default function Header() {
             Ngọc Thắng & Huyền Trang
           </h1>
 
-          <p className="text-lg md:text-xl font-light mt-3 text-pink-100 animate-fade-in">
+          <p className="text-lg md:text-xl font-light mt-3 text-pink-100 animate-fade-in tracking-wider">
             09 • 11 • 2025
           </p>
 
           <div className="mt-5">
-            <Countdown targetDate={new Date('2025-11-09T00:00:00')} />
+            <Countdown targetDate={new Date("2025-11-09T00:00:00")} />
           </div>
         </div>
       </ScrollReveal>
@@ -48,7 +49,7 @@ export default function Header() {
       </div>
 
       <style>{`
-        /* Soft zoom animation */
+        /* Zoom-in background */
         @keyframes slow-zoom {
           from { transform: scale(1); }
           to { transform: scale(1.08); }
@@ -57,13 +58,13 @@ export default function Header() {
           animation: slow-zoom 25s ease-in-out infinite alternate;
         }
 
-        /* Floating light sparkles */
+        /* Sparkles */
         @keyframes twinkle {
           0%, 100% { opacity: 0; transform: translateY(0); }
           50% { opacity: 1; transform: translateY(-10px); }
         }
         .animate-twinkle {
-          animation: twinkle 5s ease-in-out infinite;
+          animation: twinkle 6s ease-in-out infinite;
         }
 
         /* Fade-in and gradient shimmer */
