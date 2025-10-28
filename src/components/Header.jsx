@@ -4,7 +4,6 @@ import Countdown from "./Countdown";
 export default function Header() {
   return (
     <header className="relative w-full h-screen bg-pink-50 flex flex-col items-center justify-center overflow-hidden">
-      {/* Ảnh nền */}
       <img
         src="/images/header.jpg"
         alt="Ảnh cưới"
@@ -12,10 +11,9 @@ export default function Header() {
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
 
-      {/* Nội dung trung tâm */}
       <ScrollReveal direction="up" delay={200}>
         <div className="relative z-10 text-center text-white drop-shadow-lg px-4">
-          <p className="text-sm md:text-base tracking-[0.4em] uppercase text-pink-200 mb-3 animate-fade-in">
+          <p className="text-sm font-playfair md:text-base tracking-[0.4em] uppercase text-pink-200 mb-3 animate-fade-in">
             Save The Date
           </p>
 
@@ -23,7 +21,7 @@ export default function Header() {
             Ngọc Thắng & Huyền Trang
           </h1>
 
-          <p className="text-lg md:text-xl font-light mt-4 text-pink-100 animate-fade-in">
+          <p className="text-lg font-playfair d:text-xl font-light mt-4 text-pink-100 animate-fade-in">
             09 • 11 • 2025
           </p>
 
@@ -31,12 +29,10 @@ export default function Header() {
         </div>
       </ScrollReveal>
 
-      {/* Hiệu ứng hướng dẫn cuộn xuống */}
       <div className="absolute bottom-8 text-white text-center animate-bounce">
         <span className="text-sm opacity-80">Cuộn xuống để xem thiệp</span>
       </div>
 
-      {/* Hiệu ứng động nhỏ */}
       <style>{`
         @keyframes fade-in {
           from { opacity: 0; transform: translateY(20px); }

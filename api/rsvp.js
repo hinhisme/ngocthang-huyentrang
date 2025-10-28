@@ -4,7 +4,6 @@ import path from "path";
 
 const filePath = path.join(process.cwd(), "rsvp_data.xlsx");
 
-// ✅ Tạo file Excel nếu chưa có
 async function ensureExcelFile() {
   try {
     await fs.access(filePath);
@@ -23,7 +22,6 @@ async function ensureExcelFile() {
   }
 }
 
-// ✅ Xử lý request
 export default async function handler(req, res) {
   if (req.method === "POST") {
     const { name, relation, phone, attendance, message } = req.body;
