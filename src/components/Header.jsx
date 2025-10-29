@@ -4,28 +4,23 @@ import Countdown from "./Countdown";
 export default function Header() {
   return (
     <header className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden bg-pink-50">
-      {/* Ảnh nền có hiệu ứng zoom chậm */}
       <img
         src="/images/header.jpg"
         alt="Ảnh cưới"
         className="absolute inset-0 w-full h-full object-cover brightness-75 animate-slow-zoom"
       />
 
-      {/* Lớp phủ gradient tối nhẹ */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
 
-      {/* Hiệu ứng ánh sao nhỏ */}
       <div className="absolute w-2 h-2 bg-white/50 rounded-full animate-twinkle left-[35%] top-[40%]" />
       <div className="absolute w-1.5 h-1.5 bg-pink-100/70 rounded-full animate-twinkle-slow left-[65%] top-[30%]" />
       <div className="absolute w-1.5 h-1.5 bg-white/50 rounded-full animate-twinkle-slow left-[50%] top-[55%]" />
 
-      {/* Khối nội dung chính */}
       <ScrollReveal direction="up" delay={200}>
         <div className="relative z-10 text-center text-white px-8 py-6 
           bg-white/2 backdrop-blur-[2px] rounded-2xl border border-white/5 
           shadow-[0_0_50px_rgba(255,255,255,0.05)] overflow-hidden">
 
-          {/* Hiệu ứng phản sáng nhẹ */}
           <span className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-white/10 to-transparent opacity-30 blur-md pointer-events-none"></span>
 
           <p className="text-3xl font-['Great_Vibes'] text-pink-100 mb-3 animate-fade-in relative z-10">
@@ -46,7 +41,6 @@ export default function Header() {
         </div>
       </ScrollReveal>
 
-      {/* Dòng “Cuộn xuống” */}
       <div className="absolute bottom-8 text-white text-center animate-bounce">
         <span className="text-sm opacity-80 flex items-center gap-2 justify-center">
           <svg
@@ -63,7 +57,6 @@ export default function Header() {
         </span>
       </div>
 
-      {/* Style riêng */}
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
