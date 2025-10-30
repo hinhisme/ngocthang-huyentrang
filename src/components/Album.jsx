@@ -8,6 +8,8 @@ export default function Album() {
     "/images/album/album4.jpg",
     "/images/album/album5.jpg",
     "/images/album/album6.jpg",
+    "/images/album/album7.jpg",
+
   ];
 
   return (

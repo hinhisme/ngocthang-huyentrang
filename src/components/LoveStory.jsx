@@ -16,7 +16,7 @@ export default function LoveStory() {
     },
     {
       text: "Chúng ta nói lời ước hẹn trăm năm ❤️",
-      image: "/images/story4.jpg",
+      image: "/images/album/album2.jpg",
     },
   ];
 
@@ -33,7 +33,7 @@ export default function LoveStory() {
               <img
                 src={item.image}
                 alt={item.date}
-                className="w-full h-64 object-cover"
+                className="w-full h-64 object-cover object-[center_25%]"
               />
               <div className="p-5 text-left">
                 <p className="text-sm text-gray-500 font-playfair">{item.date}</p>

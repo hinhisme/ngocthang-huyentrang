@@ -46,7 +46,7 @@ const RSVP = () => {
       id="rsvp"
       className="relative bg-cover bg-center bg-no-repeat min-h-screen flex flex-col items-center justify-end pb-12"
       style={{
-        backgroundImage: "url('/images/header.jpg')",
+        backgroundImage: "url('/images/album/album4.jpg')",
       }}
     >
       <div className="absolute inset-0 bg-black/30"></div>
