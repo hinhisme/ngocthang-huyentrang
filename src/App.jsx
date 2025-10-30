@@ -40,7 +40,7 @@ function App() {
         >
           <span className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-40 transition-opacity duration-300 rounded-full"></span>
           <span className="relative z-10 font-playfair flex items-center gap-2">
-            💌 Xem lời chúc
+            💖 Xem lời chúc
           </span>
         </button>
       </div>
