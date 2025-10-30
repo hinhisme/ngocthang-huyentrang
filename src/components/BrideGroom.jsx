@@ -5,16 +5,18 @@ function LazyImage({ src, alt }) {
   const [loaded, setLoaded] = useState(false);
 
   return (
-    <div className="relative w-full">
-      {!loaded && <div className="w-full h-[400px] bg-gray-200 animate-pulse rounded-2xl" />}
+    <div className="relative w-full flex justify-center bg-white">
+      {!loaded && (
+        <div className="w-full h-[450px] bg-gray-200 animate-pulse rounded-2xl" />
+      )}
       <img
         src={src}
         alt={alt}
         loading="lazy"
         onLoad={() => setLoaded(true)}
-        className={`w-full h-[400px] object-cover rounded-2xl shadow-md transition-opacity duration-700 ${
+        className={`max-h-[450px] w-auto rounded-2xl shadow-md transition-opacity duration-700 ${
           loaded ? "opacity-100" : "opacity-0"
-        }`}
+        } object-contain`}
       />
     </div>
   );
@@ -23,9 +25,10 @@ function LazyImage({ src, alt }) {
 export default function BrideGroom() {
   return (
     <section className="w-full bg-white py-20 px-6 md:px-20">
+      {/* Chú rể */}
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         <ScrollReveal direction="up" delay={700}>
-          <div>
+          <div className="flex justify-center">
             <LazyImage src="/images/groom.webp" alt="Chú rể" />
           </div>
         </ScrollReveal>
@@ -43,6 +46,7 @@ export default function BrideGroom() {
         </ScrollReveal>
       </div>
 
+      {/* Cô dâu */}
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center mt-20">
         <ScrollReveal direction="up" delay={700}>
           <div className="order-2 md:order-1 text-gray-800 text-center md:text-left">
@@ -57,7 +61,7 @@ export default function BrideGroom() {
         </ScrollReveal>
 
         <ScrollReveal direction="up" delay={900}>
-          <div className="order-1 md:order-2">
+          <div className="order-1 md:order-2 flex justify-center">
             <LazyImage src="/images/bride.webp" alt="Cô dâu" />
           </div>
         </ScrollReveal>

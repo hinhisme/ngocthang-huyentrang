@@ -55,6 +55,7 @@ function StoryCard({ item }) {
         className={`w-full h-64 object-cover object-center transition-opacity duration-700 ${
           loaded ? "opacity-100" : "opacity-0"
         }`}
+        style={{ objectPosition: "center 22%" }}
       />
 
       <div className="p-5 text-left">
