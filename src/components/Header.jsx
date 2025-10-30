@@ -12,8 +12,8 @@ export default function Header() {
           loading="eager"
           decoding="async"
           fetchPriority="high"
-          className="absolute inset-0 w-full h-full object-contain bg-[#f9f7f6]"
-          style={{ objectPosition: "center center" }}
+          className="absolute inset-0 w-full h-full object-cover bg-[#f9f7f6]"
+          style={{ objectPosition: "70% 35%" }}
         />
       </picture>
 
