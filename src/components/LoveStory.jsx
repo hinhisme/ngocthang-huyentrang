@@ -17,7 +17,7 @@ export default function LoveStory() {
     },
     {
       text: "Chúng ta nói lời ước hẹn trăm năm ❤️",
-      image: "/images/album/album2.webp",
+      image: "/images/album/album2.jpg",
     },
   ];
 
