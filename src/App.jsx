@@ -13,6 +13,7 @@ import FallingLeaves from "./components/FallingLeaves";
 import Thanks from "./components/Thanks";
 import InvitationCard from "./components/InvitationCard";
 import GoogleMapSection from "./components/GoogleMapSection";
+import ScrollReveal from "./components/ScrollReveal";
 
 function App() {
   const [showMessages, setShowMessages] = useState(false);
@@ -25,26 +26,30 @@ function App() {
       <LoveStory />
       <Album />
       <PartyInfo />
-
-      {/* 👉 Nút mở popup */}
+      <InvitationCard />
+      <RSVP />
+      <ScrollReveal direction="up" delay={200}>
       <div className="text-center my-10">
         <button
           onClick={() => setShowMessages(true)}
-          className="px-6 py-3 bg-pink-500 text-white font-medium rounded-full shadow-md hover:bg-pink-600 transition-all duration-300"
+          className="group relative inline-flex items-center justify-center px-8 py-3 
+            text-lg font-medium text-white rounded-full 
+            bg-gradient-to-r from-pink-400 via-pink-300 to-rose-400 
+            shadow-lg shadow-pink-200 hover:shadow-pink-300 
+            transition-all duration-300 overflow-hidden"
         >
-          💌 Xem lời chúc
+          <span className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-40 transition-opacity duration-300 rounded-full"></span>
+          <span className="relative z-10 font-playfair flex items-center gap-2">
+            💌 Xem lời chúc
+          </span>
         </button>
       </div>
-
-      <InvitationCard />
-      <RSVP />
+      </ScrollReveal>
       <BankQR />
       <GoogleMapSection />
       <Thanks />
       <Footer />
       <BackgroundMusic />
-
-      {/* 👉 Popup GuestMessages */}
       {showMessages && (
         <GuestMessages onClose={() => setShowMessages(false)} />
       )}
