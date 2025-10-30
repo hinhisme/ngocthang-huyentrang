@@ -10,7 +10,6 @@ const GuestMessages = ({ onClose }) => {
       .catch((err) => console.error("Lỗi khi tải lời chúc:", err));
   }, []);
 
-  // 🎀 Hàm hiển thị quan hệ với màu & icon riêng
   const getRelationTag = (relation) => {
     switch (relation) {
       case "bride":
@@ -43,7 +42,6 @@ const GuestMessages = ({ onClose }) => {
   return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 backdrop-blur-sm animate-fadeIn">
       <div className="relative bg-white w-[90%] md:w-[70%] max-h-[80vh] rounded-3xl shadow-2xl overflow-y-auto p-6 md:p-8 border border-pink-100 animate-slideUp">
-        {/* Nút đóng popup */}
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-2xl transition-transform hover:scale-110"
@@ -52,12 +50,10 @@ const GuestMessages = ({ onClose }) => {
           ✕
         </button>
 
-        {/* Tiêu đề */}
         <h2 className="text-3xl md:text-4xl font-playfair mb-6 text-center text-pink-600">
           💌 Lời chúc từ bạn bè
         </h2>
 
-        {/* Danh sách lời chúc */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {messages.length > 0 ? (
             messages.map((msg, index) => (
@@ -94,8 +90,6 @@ const GuestMessages = ({ onClose }) => {
             </p>
           )}
         </div>
-
-        {/* Hiệu ứng CSS */}
         <style>{`
           @keyframes fadeIn {
             from { opacity: 0; }

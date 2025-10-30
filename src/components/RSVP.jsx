@@ -1,120 +1,153 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
+import ScrollReveal from "./ScrollReveal";
 
-const GuestMessages = ({ onClose }) => {
+const RSVP = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    relation: "",
+    phone: "",
+    attendance: "",
+    message: "",
+  });
   const [messages, setMessages] = useState([]);
+  const [bgLoaded, setBgLoaded] = useState(false);
+
+  const bgImage = "/images/album/album4.webp";
 
   useEffect(() => {
-    fetch("https://wedding-rsvp-server-z9at.onrender.com/api/rsvp")
-      .then((res) => res.json())
-      .then((data) => setMessages(data))
-      .catch((err) => console.error("Lỗi khi tải lời chúc:", err));
+    const img = new Image();
+    img.src = bgImage;
+    img.onload = () => setBgLoaded(true);
   }, []);
 
-  // 🎀 Hàm hiển thị quan hệ với màu & icon riêng
-  const getRelationTag = (relation) => {
-    switch (relation) {
-      case "bride":
-        return (
-          <span className="flex items-center gap-1 text-pink-500 bg-pink-50 border border-pink-200 px-3 py-1 rounded-full text-xs font-medium shadow-sm">
-            👰‍♀️ Bạn cô dâu
-          </span>
-        );
-      case "groom":
-        return (
-          <span className="flex items-center gap-1 text-blue-500 bg-blue-50 border border-blue-200 px-3 py-1 rounded-full text-xs font-medium shadow-sm">
-            🤵‍♂️ Bạn chú rể
-          </span>
-        );
-      case "family":
-        return (
-          <span className="flex items-center gap-1 text-amber-600 bg-amber-50 border border-amber-200 px-3 py-1 rounded-full text-xs font-medium shadow-sm">
-            👨‍👩‍👧‍👦 Người thân
-          </span>
-        );
-      default:
-        return (
-          <span className="flex items-center gap-1 text-gray-600 bg-gray-50 border border-gray-200 px-3 py-1 rounded-full text-xs font-medium shadow-sm">
-            🌸 Khách mời
-          </span>
-        );
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await fetch("https://wedding-rsvp-server-z9at.onrender.com/api/rsvp", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      setMessages((prev) => [formData, ...prev]);
+      setFormData({
+        name: "",
+        relation: "",
+        phone: "",
+        attendance: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Lỗi gửi RSVP:", error);
     }
   };
 
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 backdrop-blur-sm animate-fadeIn">
-      <div className="relative bg-white w-[90%] md:w-[70%] max-h-[80vh] rounded-3xl shadow-2xl overflow-y-auto p-6 md:p-8 border border-pink-100 animate-slideUp">
-        {/* Nút đóng popup */}
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-2xl transition-transform hover:scale-110"
-          aria-label="Đóng"
-        >
-          ✕
-        </button>
+    <ScrollReveal direction="up" delay={200}>
+      <section
+        id="rsvp"
+        className={`relative min-h-screen flex flex-col items-center justify-end pb-12 transition-opacity duration-700 ${
+          bgLoaded ? "opacity-100" : "opacity-0"
+        }`}
+        style={{
+          backgroundImage: bgLoaded ? `url('${bgImage}')` : "none",
+          backgroundColor: "#f7f5f0",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center center",
+          backgroundSize: "contain", // ✅ Giữ ảnh trọn vẹn, không bị crop
+        }}
+      >
+        {/* Lớp nền mờ để dễ đọc chữ hơn */}
+        <div className="absolute inset-0 bg-black/40" />
 
-        {/* Tiêu đề */}
-        <h2 className="text-3xl md:text-4xl font-playfair mb-6 text-center text-pink-600">
-          💌 Lời chúc từ bạn bè
-        </h2>
+        <div className="relative bg-white/90 p-6 rounded-2xl shadow-xl max-w-xl w-[90%] text-center mb-10 animate-fadeIn">
+          <h2 className="text-2xl font-playfair mb-3">Xác Nhận Tham Dự</h2>
+          <p className="text-gray-600 mb-5 text-sm">
+            Vui lòng gửi lời chúc & xác nhận tham dự 💌
+          </p>
 
-        {/* Danh sách lời chúc */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {messages.length > 0 ? (
-            messages.map((msg, index) => (
-              <div
-                key={index}
-                className="bg-gradient-to-br from-white to-pink-50 rounded-2xl shadow-md p-5 border border-pink-100 hover:shadow-lg transition-all duration-500 relative"
-              >
-                <div className="flex justify-between items-center mb-3">
-                  <p className="text-base font-medium text-gray-800">
-                    {msg.name}
-                  </p>
-                  {getRelationTag(msg.relation)}
-                </div>
+          <form onSubmit={handleSubmit} className="flex flex-col gap-3 text-left">
+            <input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              placeholder="Họ và tên"
+              className="border border-gray-300 p-2 rounded-lg focus:ring-2 focus:ring-accent focus:outline-none"
+            />
 
-                <p className="text-gray-700 italic leading-relaxed mb-3">
-                  “{msg.message || "Không có lời chúc 💌"}”
-                </p>
+            <select
+              name="relation"
+              value={formData.relation}
+              onChange={handleChange}
+              required
+              className="border border-gray-300 p-2 rounded-lg focus:ring-2 focus:ring-accent focus:outline-none"
+            >
+              <option value="">Mối quan hệ</option>
+              <option value="bride">Bạn của cô dâu</option>
+              <option value="groom">Bạn của chú rể</option>
+              <option value="family">Người thân hai bên</option>
+              <option value="other">Khác</option>
+            </select>
 
-                <div className="flex justify-between items-center text-sm text-gray-500">
-                  <p>
-                    {msg.attendance === "yes" ? (
-                      <span className="text-green-600">💒 Sẽ tham dự</span>
-                    ) : (
-                      <span className="text-red-500">😢 Không tham dự</span>
-                    )}
-                  </p>
-                  <p className="text-xs">{msg.timestamp}</p>
-                </div>
-              </div>
-            ))
-          ) : (
-            <p className="text-gray-500 italic text-center col-span-2">
-              Chưa có lời chúc nào 💌
-            </p>
-          )}
+            <input
+              type="tel"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              placeholder="Số điện thoại"
+              className="border border-gray-300 p-2 rounded-lg focus:ring-2 focus:ring-accent focus:outline-none"
+            />
+
+            <div className="flex items-center justify-between">
+              <label className="flex items-center gap-2 text-sm">
+                <input
+                  type="radio"
+                  name="attendance"
+                  value="yes"
+                  checked={formData.attendance === "yes"}
+                  onChange={handleChange}
+                  required
+                />
+                <span>Sẽ tham dự 💒</span>
+              </label>
+              <label className="flex items-center gap-2 text-sm">
+                <input
+                  type="radio"
+                  name="attendance"
+                  value="no"
+                  checked={formData.attendance === "no"}
+                  onChange={handleChange}
+                />
+                <span>Không thể tham dự 😢</span>
+              </label>
+            </div>
+
+            <textarea
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              placeholder="Lời chúc 💕"
+              className="border border-gray-300 p-2 rounded-lg focus:ring-2 focus:ring-accent focus:outline-none min-h-[80px]"
+            ></textarea>
+
+            <button
+              type="submit"
+              className="bg-accent hover:bg-accent-dark text-white py-2 px-8 rounded-full font-medium transition-all duration-300 mx-auto"
+            >
+              Gửi 💖
+            </button>
+          </form>
         </div>
-
-        {/* Hiệu ứng CSS */}
-        <style>{`
-          @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-          }
-          @keyframes slideUp {
-            from { opacity: 0; transform: translateY(40px); }
-            to { opacity: 1; transform: translateY(0); }
-          }
-          .animate-fadeIn {
-            animation: fadeIn 0.4s ease-out forwards;
-          }
-          .animate-slideUp {
-            animation: slideUp 0.5s ease-out forwards;
-          }
-        `}</style>
-      </div>
-    </div>
+      </section>
+    </ScrollReveal>
   );
 };
 
-export default GuestMessages;
+export default RSVP;
