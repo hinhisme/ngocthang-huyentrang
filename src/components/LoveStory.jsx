@@ -1,10 +1,10 @@
+import { useState } from "react";
 import ScrollReveal from "./ScrollReveal";
-import { useState, useEffect } from "react";
 
 export default function LoveStory() {
   const stories = [
     {
-      text: "Chẳng ai ngờ giữa hàng trăm toa thuốc ở Long Châu, chúng tôi lại kê đơn trúng… tình yêu.",
+      text: "Chẳng ai ngờ giữa hàng trăm toa thuốc ở Hiệu thuốc, chúng tôi lại kê đơn trúng… tình yêu.",
       image: "/images/story1.webp",
     },
     {
@@ -17,55 +17,49 @@ export default function LoveStory() {
     },
     {
       text: "Chúng ta nói lời ước hẹn trăm năm ❤️",
-      image: "/images/album/album2.jpg",
+      image: "/images/album/album2.webp",
     },
   ];
-
 
   return (
     <ScrollReveal direction="up" delay={700}>
       <section className="py-20 bg-white text-center">
-        <h2 className="text-3xl font-playfair mb-10 text-gray-800">
+        <h2 className="text-3xl md:text-4xl font-playfair mb-10">
           Our Love Story
         </h2>
 
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 px-6">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-6">
           {stories.map((item, idx) => (
-            <div
-              key={idx}
-              className="flex flex-col items-center bg-pink-50 rounded-2xl shadow-lg overflow-hidden transform hover:scale-[1.02] transition duration-500"
-            >
-              <picture>
-                <source srcSet={item.image.replace(".jpg", ".webp")} type="image/webp" />
-                <img
-                  src={item.image}
-                  alt={`Love story ${idx + 1}`}
-                  loading={idx === 0 ? "eager" : "lazy"}
-                  onLoad={() => setLoaded((prev) => ({ ...prev, [idx]: true }))}
-                  className={`w-full h-64 object-cover object-[center_25%] transition-all duration-700 ${
-                    loaded[idx]
-                      ? "opacity-100 scale-100"
-                      : "opacity-0 scale-105 blur-md"
-                  }`}
-                />
-              </picture>
-
-              <div className="p-5 text-left">
-                <p className="text-lg text-gray-700 font-playfair mt-2 leading-relaxed">
-                  {item.text}
-                </p>
-              </div>
-            </div>
+            <StoryCard key={idx} item={item} />
           ))}
         </div>
       </section>
-
-      <style>{`
-        @keyframes fade-in {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-      `}</style>
     </ScrollReveal>
+  );
+}
+
+function StoryCard({ item }) {
+  const [loaded, setLoaded] = useState(false);
+
+  return (
+    <div className="flex flex-col bg-pink-50 rounded-2xl shadow-lg overflow-hidden transform hover:scale-[1.02] transition duration-300">
+      {!loaded && (
+        <div className="w-full h-64 bg-gray-200 animate-pulse" />
+      )}
+
+      <img
+        src={item.image}
+        alt="Love story"
+        loading="lazy"
+        onLoad={() => setLoaded(true)}
+        className={`w-full h-64 object-cover object-center transition-opacity duration-700 ${
+          loaded ? "opacity-100" : "opacity-0"
+        }`}
+      />
+
+      <div className="p-5 text-left">
+        <p className="text-lg text-gray-700 font-playfair">{item.text}</p>
+      </div>
+    </div>
   );
 }

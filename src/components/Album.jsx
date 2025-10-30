@@ -2,13 +2,13 @@ import ScrollReveal from "./ScrollReveal";
 
 export default function Album() {
   const images = [
-    "/images/album/album1.jpg",
-    "/images/album/album2.jpg",
-    "/images/album/album3.jpg",
-    "/images/album/album4.jpg",
-    "/images/album/album5.jpg",
-    "/images/album/album6.jpg",
-    "/images/album/album7.jpg",
+    "/images/album/album1.webp",
+    "/images/album/album2.webp",
+    "/images/album/album3.webp",
+    "/images/album/album4.webp",
+    "/images/album/album5.webp",
+    "/images/album/album6.webp",
+    "/images/album/album7.webp",
 
   ];
 
