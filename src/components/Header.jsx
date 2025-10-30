@@ -1,23 +1,10 @@
 import ScrollReveal from "./ScrollReveal";
 import Countdown from "./Countdown";
-import { useState, useEffect } from "react";
 
 export default function Header() {
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    const img = new Image();
-    img.src = "/images/header.webp";
-    img.onload = () => setIsLoaded(true);
-  }, []);
-
   return (
     <header className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden bg-[#f9f7f6]">
-      {/* Hiệu ứng nền mịn trước khi ảnh load */}
-      {!isLoaded && (
-        <div className="absolute inset-0 bg-gradient-to-b from-[#f8f5f3] to-[#e7e2de] animate-pulse" />
-      )}
-
+      {/* Ảnh nền hiển thị trực tiếp, không chờ load */}
       <picture>
         <source srcSet="/images/header.webp" type="image/webp" />
         <img
@@ -26,18 +13,12 @@ export default function Header() {
           loading="eager"
           decoding="async"
           fetchPriority="high"
-          className={`absolute inset-0 w-full h-full transition-all duration-[2s] ease-out ${
-            isLoaded
-              ? "opacity-100 scale-100"
-              : "opacity-0 scale-105 blur-md"
-          } object-contain bg-[#f9f7f6]`}
-          style={{
-            objectPosition: "center center",
-          }}
+          className="absolute inset-0 w-full h-full object-contain bg-[#f9f7f6]"
+          style={{ objectPosition: "center center" }}
         />
       </picture>
 
-      {/* Lớp phủ để chữ dễ đọc hơn */}
+      {/* Lớp phủ giúp chữ nổi bật hơn */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
 
       <ScrollReveal direction="up" delay={200}>
