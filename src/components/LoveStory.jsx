@@ -43,20 +43,21 @@ function StoryCard({ item }) {
 
   return (
     <div className="flex flex-col bg-pink-50 rounded-2xl shadow-lg overflow-hidden transform hover:scale-[1.02] transition duration-300">
-      {!loaded && (
-        <div className="w-full h-64 bg-gray-200 animate-pulse" />
-      )}
+      <div className="flex justify-center bg-white">
+        {!loaded && (
+          <div className="w-full h-[400px] bg-gray-200 animate-pulse rounded-t-2xl" />
+        )}
 
-      <img
-        src={item.image}
-        alt="Love story"
-        loading="lazy"
-        onLoad={() => setLoaded(true)}
-        className={`w-full h-64 object-cover object-center transition-opacity duration-700 ${
-          loaded ? "opacity-100" : "opacity-0"
-        }`}
-        style={{ objectPosition: "center 22%" }}
-      />
+        <img
+          src={item.image}
+          alt="Love story"
+          loading="lazy"
+          onLoad={() => setLoaded(true)}
+          className={`max-h-[400px] w-auto rounded-t-2xl transition-opacity duration-700 ${
+            loaded ? "opacity-100" : "opacity-0"
+          } object-contain`}
+        />
+      </div>
 
       <div className="p-5 text-left">
         <p className="text-lg text-gray-700 font-playfair">{item.text}</p>
