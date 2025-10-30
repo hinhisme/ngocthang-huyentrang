@@ -14,7 +14,6 @@ const RSVP = () => {
 
   const bgImage = "/images/album/album4.webp";
 
-  // preload background
   useEffect(() => {
     const img = new Image();
     img.src = bgImage;
@@ -36,7 +35,6 @@ const RSVP = () => {
       });
 
       setMessages((prev) => [formData, ...prev]);
-
       setFormData({
         name: "",
         relation: "",
@@ -53,19 +51,19 @@ const RSVP = () => {
     <ScrollReveal direction="up" delay={700}>
       <section
         id="rsvp"
-        className={`relative bg-cover bg-center bg-no-repeat min-h-screen flex flex-col items-center justify-end pb-12 transition-opacity duration-700 ${
+        className={`relative min-h-screen flex flex-col items-center justify-end pb-12 transition-opacity duration-700 ${
           bgLoaded ? "opacity-100" : "opacity-0"
         }`}
         style={{
           backgroundImage: bgLoaded ? `url('${bgImage}')` : "none",
-          backgroundColor: "#f7f5f0", // fallback màu nền
+          backgroundColor: "#f7f5f0",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center center",
+          backgroundSize: "contain", // ✅ Giữ ảnh trọn vẹn, không bị crop
         }}
       >
-        {!bgLoaded && (
-          <div className="absolute inset-0 bg-gradient-to-b from-[#f5f3ef] to-[#ede9e3] animate-pulse"></div>
-        )}
-
-        <div className="absolute inset-0 bg-black/30"></div>
+        {/* Lớp nền mờ để dễ đọc chữ hơn */}
+        <div className="absolute inset-0 bg-black/40" />
 
         <div className="relative bg-white/90 p-6 rounded-2xl shadow-xl max-w-xl w-[90%] text-center mb-10 animate-fadeIn">
           <h2 className="text-2xl font-playfair mb-3">Xác Nhận Tham Dự</h2>
@@ -73,10 +71,7 @@ const RSVP = () => {
             Vui lòng gửi lời chúc & xác nhận tham dự 💌
           </p>
 
-          <form
-            onSubmit={handleSubmit}
-            className="flex flex-col gap-3 text-left"
-          >
+          <form onSubmit={handleSubmit} className="flex flex-col gap-3 text-left">
             <input
               type="text"
               name="name"

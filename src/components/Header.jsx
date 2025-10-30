@@ -4,7 +4,6 @@ import Countdown from "./Countdown";
 export default function Header() {
   return (
     <header className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden bg-[#f9f7f6]">
-      {/* Ảnh nền hiển thị trực tiếp, không chờ load */}
       <picture>
         <source srcSet="/images/header.webp" type="image/webp" />
         <img
@@ -18,7 +17,6 @@ export default function Header() {
         />
       </picture>
 
-      {/* Lớp phủ giúp chữ nổi bật hơn */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
 
       <ScrollReveal direction="up" delay={200}>
@@ -51,7 +49,6 @@ export default function Header() {
         </div>
       </ScrollReveal>
 
-      {/* Mũi tên cuộn xuống */}
       <div className="absolute bottom-8 text-white text-center animate-bounce">
         <span className="text-sm opacity-80 flex items-center gap-2 justify-center">
           <svg
