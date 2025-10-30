@@ -13,7 +13,6 @@ export default function Header() {
 
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
 
-      <ScrollReveal direction="up" delay={200}>
         <div
           className="relative z-10 text-center text-white px-8 py-6 
           bg-white/5 backdrop-blur-[2px] rounded-2xl border border-white/5 
@@ -41,7 +40,6 @@ export default function Header() {
             <Countdown targetDate={new Date("2025-11-09T00:00:00")} />
           </div>
         </div>
-      </ScrollReveal>
 
       <div className="absolute bottom-8 text-white text-center animate-bounce">
         <span className="text-sm opacity-80 flex items-center gap-2 justify-center">
