@@ -10,6 +10,12 @@ const GuestMessages = ({ onClose }) => {
       .catch((err) => console.error("Lỗi khi tải lời chúc:", err));
   }, []);
 
+  const maskPhone = (phone) => {
+    if (!phone) return "";
+    const str = String(phone);
+    return str.replace(/(\d{2})\d{4}(\d{3,4})/, "$1****$2");
+  };
+
   const getRelationTag = (relation) => {
     switch (relation) {
       case "bride":
@@ -41,7 +47,8 @@ const GuestMessages = ({ onClose }) => {
 
   return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 backdrop-blur-sm animate-fadeIn">
-      <div className="relative bg-white w-[90%] md:w-[70%] max-h-[80vh] rounded-3xl shadow-2xl overflow-y-auto p-6 md:p-8 border border-pink-100 animate-slideUp">
+      <div className="relative bg-white/95 w-[90%] md:w-[70%] max-h-[80vh] rounded-3xl shadow-2xl overflow-y-auto p-6 md:p-8 border border-pink-100 animate-slideUp">
+        {/* Nút đóng */}
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-2xl transition-transform hover:scale-110"
@@ -59,7 +66,8 @@ const GuestMessages = ({ onClose }) => {
             messages.map((msg, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-br from-white to-pink-50 rounded-2xl shadow-md p-5 border border-pink-100 hover:shadow-lg transition-all duration-500"
+                className="bg-gradient-to-br from-pink-50 to-white rounded-2xl shadow-md p-5 border border-pink-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-500 animate-messageAppear"
+                style={{ animationDelay: `${index * 0.08}s` }}
               >
                 {/* Tên + Mối quan hệ */}
                 <div className="flex flex-col mb-3">
@@ -74,16 +82,24 @@ const GuestMessages = ({ onClose }) => {
                   “{msg.message || "Không có lời chúc 💌"}”
                 </p>
 
-                {/* Trạng thái & thời gian */}
+                {/* Thông tin phụ */}
                 <div className="flex justify-between items-center text-sm text-gray-500">
                   <p>
                     {msg.attendance === "yes" ? (
-                      <span className="text-green-600 font-medium">💒 Sẽ tham dự</span>
+                      <span className="text-green-600 font-medium">
+                        💒 Sẽ tham dự
+                      </span>
                     ) : (
-                      <span className="text-red-500 font-medium">😢 Không tham dự</span>
+                      <span className="text-red-500 font-medium">
+                        😢 Không tham dự
+                      </span>
                     )}
                   </p>
-                  <p className="text-xs">{msg.timestamp}</p>
+                  {msg.phone && (
+                    <p className="text-xs text-gray-400 italic">
+                      📞 {maskPhone(msg.phone)}
+                    </p>
+                  )}
                 </div>
               </div>
             ))
@@ -94,6 +110,7 @@ const GuestMessages = ({ onClose }) => {
           )}
         </div>
 
+        {/* Hiệu ứng */}
         <style>{`
           @keyframes fadeIn {
             from { opacity: 0; }
@@ -103,11 +120,18 @@ const GuestMessages = ({ onClose }) => {
             from { opacity: 0; transform: translateY(40px); }
             to { opacity: 1; transform: translateY(0); }
           }
+          @keyframes messageAppear {
+            from { opacity: 0; transform: scale(0.9) translateY(20px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+          }
           .animate-fadeIn {
             animation: fadeIn 0.4s ease-out forwards;
           }
           .animate-slideUp {
             animation: slideUp 0.5s ease-out forwards;
+          }
+          .animate-messageAppear {
+            animation: messageAppear 0.4s ease-out forwards;
           }
         `}</style>
       </div>
