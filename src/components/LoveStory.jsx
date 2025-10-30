@@ -5,23 +5,22 @@ export default function LoveStory() {
   const stories = [
     {
       text: "Chẳng ai ngờ giữa hàng trăm toa thuốc ở Long Châu, chúng tôi lại kê đơn trúng… tình yêu.",
-      image: "/images/story1.jpg",
+      image: "/images/story1.webp",
     },
     {
       text: "Những chuyến đi xa, những kỷ niệm khó quên.",
-      image: "/images/story2.jpg",
+      image: "/images/story2.webp",
     },
     {
       text: "Lời tỏ tình giản dị nhưng đầy chân thành.",
-      image: "/images/story3.jpg",
+      image: "/images/story3.webp",
     },
     {
       text: "Chúng ta nói lời ước hẹn trăm năm ❤️",
-      image: "/images/album/album2.jpg",
+      image: "/images/album/album2.webp",
     },
   ];
 
-  const [loaded, setLoaded] = useState({});
 
   return (
     <ScrollReveal direction="up" delay={700}>
