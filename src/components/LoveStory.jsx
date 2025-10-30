@@ -22,7 +22,7 @@ export default function LoveStory() {
   ];
 
   return (
-    <ScrollReveal direction="up" delay={700}>
+    <ScrollReveal direction="up" delay={200}>
       <section className="py-20 bg-white text-center">
         <h2 className="text-3xl md:text-4xl font-playfair mb-10">
           Our Love Story

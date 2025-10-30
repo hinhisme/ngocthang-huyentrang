@@ -48,7 +48,7 @@ const RSVP = () => {
   };
 
   return (
-    <ScrollReveal direction="up" delay={700}>
+    <ScrollReveal direction="up" delay={200}>
       <section
         id="rsvp"
         className={`relative min-h-screen flex flex-col items-center justify-end pb-12 transition-opacity duration-700 ${

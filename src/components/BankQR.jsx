@@ -2,7 +2,7 @@ import ScrollReveal from "./ScrollReveal";
 
 export default function BankQR() {
   return (
-    <ScrollReveal direction="up" delay={500}>
+    <ScrollReveal direction="up" delay={200}>
       <section className="py-20 bg-[#fffaf5] text-center">
         <h2 className="text-3xl font-playfair mb-12 tracking-wide">
           HỘP MỪNG CƯỚI

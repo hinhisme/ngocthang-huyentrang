@@ -27,13 +27,13 @@ export default function BrideGroom() {
     <section className="w-full bg-white py-20 px-6 md:px-20">
       {/* Chú rể */}
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-        <ScrollReveal direction="up" delay={700}>
+        <ScrollReveal direction="up" delay={200}>
           <div className="flex justify-center">
             <LazyImage src="/images/groom.webp" alt="Chú rể" />
           </div>
         </ScrollReveal>
 
-        <ScrollReveal direction="up" delay={900}>
+        <ScrollReveal direction="up" delay={200}>
           <div className="text-gray-800 text-center md:text-left">
             <h4 className="text-sm tracking-widest text-gray-500 mb-2">CHÚ RỂ</h4>
             <h2 className="text-3xl md:text-4xl font-playfair mb-4">Ngọc Thắng</h2>
@@ -48,7 +48,7 @@ export default function BrideGroom() {
 
       {/* Cô dâu */}
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center mt-20">
-        <ScrollReveal direction="up" delay={700}>
+        <ScrollReveal direction="up" delay={200}>
           <div className="order-2 md:order-1 text-gray-800 text-center md:text-left">
             <h4 className="text-sm tracking-widest text-gray-500 mb-2">CÔ DÂU</h4>
             <h2 className="text-3xl md:text-4xl font-playfair mb-4">Huyền Trang</h2>
@@ -60,7 +60,7 @@ export default function BrideGroom() {
           </div>
         </ScrollReveal>
 
-        <ScrollReveal direction="up" delay={900}>
+        <ScrollReveal direction="up" delay={200}>
           <div className="order-1 md:order-2 flex justify-center">
             <LazyImage src="/images/bride.webp" alt="Cô dâu" />
           </div>

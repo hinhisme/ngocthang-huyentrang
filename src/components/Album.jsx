@@ -13,7 +13,7 @@ export default function Album() {
   ];
 
   return (
-    <ScrollReveal direction="up" delay={700}>
+    <ScrollReveal direction="up" delay={200}>
       <section className="py-20 bg-pink-50">
         <h2 className="text-3xl font-playfair text-center mb-10">
           ALBUM ẢNH CƯỚI

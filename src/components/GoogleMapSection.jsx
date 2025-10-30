@@ -5,13 +5,13 @@ const GoogleMapSection = () => {
   return (
     
     <div className="bg-pink-50 py-12 px-4">
-      <ScrollReveal direction="up" delay={700}>
+      <ScrollReveal direction="up" delay={200}>
       <h2 className="text-center text-3xl font-playfair font-semibold mb-8">
         💒 Địa điểm tổ chức
       </h2>
       </ScrollReveal>
       <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-        <ScrollReveal direction="up" delay={700}>
+        <ScrollReveal direction="up" delay={200}>
         <div className="text-center">
           <h3 className="text-xl font-medium mb-2 font-playfair">🏠 Nhà Trai</h3>
           <p className="font-playfair mb-3">Số nhà 2319, Đường Nguyễn Văn Linh, Tổ dân phố Lường, Phường Thượng Hồng, Tỉnh Hưng Yên</p>
@@ -29,7 +29,7 @@ const GoogleMapSection = () => {
           </div>
         </div>
         </ScrollReveal>
-        <ScrollReveal direction="up" delay={700}>
+        <ScrollReveal direction="up" delay={200}>
         <div className="text-center">
           <h3 className="text-xl font-medium mb-2 font-playfair">🏡 Nhà Gái</h3>
           <p className="font-playfair mb-3">Số nhà 762, Đường Nguyễn Văn Linh, Tổ dân phố Ngọc Lập, Phường Đường Hào, Tỉnh Hưng Yên</p>
