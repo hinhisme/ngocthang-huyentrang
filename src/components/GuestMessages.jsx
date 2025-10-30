@@ -14,25 +14,25 @@ const GuestMessages = ({ onClose }) => {
     switch (relation) {
       case "bride":
         return (
-          <span className="flex items-center gap-1 text-pink-500 bg-pink-50 border border-pink-200 px-3 py-1 rounded-full text-xs font-medium shadow-sm">
+          <span className="inline-flex items-center gap-1 text-pink-600 bg-pink-50 border border-pink-200 px-3 py-1 rounded-full text-xs font-medium shadow-sm">
             👰‍♀️ Bạn cô dâu
           </span>
         );
       case "groom":
         return (
-          <span className="flex items-center gap-1 text-blue-500 bg-blue-50 border border-blue-200 px-3 py-1 rounded-full text-xs font-medium shadow-sm">
+          <span className="inline-flex items-center gap-1 text-blue-600 bg-blue-50 border border-blue-200 px-3 py-1 rounded-full text-xs font-medium shadow-sm">
             🤵‍♂️ Bạn chú rể
           </span>
         );
       case "family":
         return (
-          <span className="flex items-center gap-1 text-amber-600 bg-amber-50 border border-amber-200 px-3 py-1 rounded-full text-xs font-medium shadow-sm">
+          <span className="inline-flex items-center gap-1 text-amber-700 bg-amber-50 border border-amber-200 px-3 py-1 rounded-full text-xs font-medium shadow-sm">
             👨‍👩‍👧‍👦 Người thân
           </span>
         );
       default:
         return (
-          <span className="flex items-center gap-1 text-gray-600 bg-gray-50 border border-gray-200 px-3 py-1 rounded-full text-xs font-medium shadow-sm">
+          <span className="inline-flex items-center gap-1 text-gray-600 bg-gray-50 border border-gray-200 px-3 py-1 rounded-full text-xs font-medium shadow-sm">
             🌸 Khách mời
           </span>
         );
@@ -59,25 +59,28 @@ const GuestMessages = ({ onClose }) => {
             messages.map((msg, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-br from-white to-pink-50 rounded-2xl shadow-md p-5 border border-pink-100 hover:shadow-lg transition-all duration-500 relative"
+                className="bg-gradient-to-br from-white to-pink-50 rounded-2xl shadow-md p-5 border border-pink-100 hover:shadow-lg transition-all duration-500"
               >
-                <div className="flex justify-between items-center mb-3">
-                  <p className="text-base font-medium text-gray-800">
-                    {msg.name}
+                {/* Tên + Mối quan hệ */}
+                <div className="flex flex-col mb-3">
+                  <p className="text-base font-semibold text-gray-800">
+                    {msg.name || "Khách mời ẩn danh"}
                   </p>
-                  {getRelationTag(msg.relation)}
+                  <div className="mt-1">{getRelationTag(msg.relation)}</div>
                 </div>
 
+                {/* Lời chúc */}
                 <p className="text-gray-700 italic leading-relaxed mb-3">
                   “{msg.message || "Không có lời chúc 💌"}”
                 </p>
 
+                {/* Trạng thái & thời gian */}
                 <div className="flex justify-between items-center text-sm text-gray-500">
                   <p>
                     {msg.attendance === "yes" ? (
-                      <span className="text-green-600">💒 Sẽ tham dự</span>
+                      <span className="text-green-600 font-medium">💒 Sẽ tham dự</span>
                     ) : (
-                      <span className="text-red-500">😢 Không tham dự</span>
+                      <span className="text-red-500 font-medium">😢 Không tham dự</span>
                     )}
                   </p>
                   <p className="text-xs">{msg.timestamp}</p>
@@ -90,6 +93,7 @@ const GuestMessages = ({ onClose }) => {
             </p>
           )}
         </div>
+
         <style>{`
           @keyframes fadeIn {
             from { opacity: 0; }
