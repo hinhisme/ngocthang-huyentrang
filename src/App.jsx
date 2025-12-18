@@ -37,9 +37,9 @@ function App() {
       <Album />
       <PartyInfo />
       <InvitationCard />
-      <RSVP />
+      {/*<RSVP />*/}
 
-      {/* 💌 Nút xem lời chúc */}
+      {/* 💌 Nút xem lời chúc 
       <ScrollReveal direction="up" delay={200}>
         <div className="text-center my-10">
           <button
@@ -57,7 +57,7 @@ function App() {
           </button>
         </div>
       </ScrollReveal>
-
+      */}
       <BankQR />
       {/*<GoogleMapSection />*/}
       <Thanks />
