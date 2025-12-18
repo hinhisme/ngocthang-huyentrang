@@ -59,7 +59,7 @@ function App() {
       </ScrollReveal>
 
       <BankQR />
-      <GoogleMapSection />
+      {/*<GoogleMapSection />*/}
       <Thanks />
       <Footer />
       <BackgroundMusic />

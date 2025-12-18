@@ -4,20 +4,20 @@ import ScrollReveal from "./ScrollReveal";
 export default function LoveStory() {
   const stories = [
     {
-      text: "Chẳng ai ngờ giữa hàng trăm toa thuốc ở Hiệu thuốc, chúng tôi lại kê đơn trúng… tình yêu.",
+      text: "Khoảnh khắc nhìn thấy em đứng trên bục giảng, mái tóc khẽ lay theo từng bước chân, anh chợt hiểu vì sao người ta nói có những người không cần cố gắng cũng đủ để làm tim kẻ khác rung động.",
       image: "/images/story1.webp",
     },
-    {
-      text: "Những chuyến đi xa, những kỷ niệm khó quên.",
-      image: "/images/story2.webp",
-    },
+    //{
+      //text: "Những chuyến đi xa, những kỷ niệm khó quên.",
+      //image: "/images/story2.webp",
+    //},
     {
       text: "Lời tỏ tình giản dị nhưng đầy chân thành.",
       image: "/images/story3.webp",
     },
     {
       text: "Chúng ta nói lời ước hẹn trăm năm ❤️",
-      image: "/images/album/album2.webp",
+      image: "/images/story4.webp",
     },
   ];
 

@@ -48,7 +48,6 @@ const GuestMessages = ({ onClose }) => {
   return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 backdrop-blur-sm animate-fadeIn">
       <div className="relative bg-white/95 w-[90%] md:w-[70%] max-h-[80vh] rounded-3xl shadow-2xl overflow-y-auto p-6 md:p-8 border border-pink-100 animate-slideUp">
-        {/* Nút đóng */}
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-2xl transition-transform hover:scale-110"
@@ -69,7 +68,6 @@ const GuestMessages = ({ onClose }) => {
                 className="bg-gradient-to-br from-pink-50 to-white rounded-2xl shadow-md p-5 border border-pink-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-500 animate-messageAppear"
                 style={{ animationDelay: `${index * 0.08}s` }}
               >
-                {/* Tên + Mối quan hệ */}
                 <div className="flex flex-col mb-3">
                   <p className="text-base font-semibold text-gray-800">
                     {msg.name || "Khách mời ẩn danh"}
@@ -77,12 +75,10 @@ const GuestMessages = ({ onClose }) => {
                   <div className="mt-1">{getRelationTag(msg.relation)}</div>
                 </div>
 
-                {/* Lời chúc */}
                 <p className="text-gray-700 italic leading-relaxed mb-3">
                   “{msg.message || "Không có lời chúc 💌"}”
                 </p>
 
-                {/* Thông tin phụ */}
                 <div className="flex justify-between items-center text-sm text-gray-500">
                   <p>
                     {msg.attendance === "yes" ? (
@@ -110,7 +106,6 @@ const GuestMessages = ({ onClose }) => {
           )}
         </div>
 
-        {/* Hiệu ứng */}
         <style>{`
           @keyframes fadeIn {
             from { opacity: 0; }

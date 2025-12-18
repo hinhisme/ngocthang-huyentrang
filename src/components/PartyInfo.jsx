@@ -20,13 +20,13 @@ export default function PartyInfo() {
             ĐƯỢC TỔ CHỨC VÀO
           </p>
           <p className="font-playfair text-gray-800 mb-4">
-            16h30 - Thứ 7, 08/11/2025
+            17h00 - Thứ 7, 03/01/2026
           </p>
 
           <p className="font-playfair text-gray-700 mb-2">TẠI ĐỊA ĐIỂM</p>
           <p className="font-playfair text-gray-800">TƯ GIA NHÀ TRAI</p>
           <p className="font-playfair text-gray-800">
-            Số nhà 2319, Đường Nguyễn Văn Linh, Tổ dân phố Lường, Phường Thượng Hồng, Tỉnh Hưng Yên
+            Số nhà 358, Đường Nguyễn Văn Linh, Phan Bôi, Dị Sử, Mỹ Hào, Tỉnh Hưng Yên
           </p>
 
           <img
@@ -50,13 +50,13 @@ export default function PartyInfo() {
             ĐƯỢC TỔ CHỨC VÀO
           </p>
           <p className="font-playfair text-gray-800 mb-4">
-            16h30 - Thứ 7, 08/11/2025
+            17h00 - Thứ 7, 03/01/2026
           </p>
 
           <p className="font-playfair text-gray-700 mb-2">TẠI ĐỊA ĐIỂM</p>
           <p className="font-playfair text-gray-800">TƯ GIA NHÀ GÁI</p>
           <p className="font-playfair text-gray-800">
-            Số nhà 762, Đường Nguyễn Văn Linh, Tổ dân phố Ngọc Lập, Phường Đường Hào, Tỉnh Hưng Yên
+            Phố Tây, Tam Sơn, Từ Sơn, Bắc Ninh
           </p>
 
           <img

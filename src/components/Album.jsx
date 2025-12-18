@@ -9,6 +9,9 @@ export default function Album() {
     "/images/album/album5.webp",
     "/images/album/album6.webp",
     "/images/album/album7.webp",
+    "/images/album/album8.webp",
+    "/images/album/album9.webp",
+    "/images/album/album10.webp",
 
   ];
 

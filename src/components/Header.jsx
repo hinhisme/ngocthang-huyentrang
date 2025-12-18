@@ -7,13 +7,13 @@ export default function Header() {
       <picture>
         <source srcSet="/images/header.webp" type="image/webp" />
         <img
-          src="/images/header.jpg"
+          src="/images/header.webp"
           alt="Ảnh cưới"
           loading="eager"
           decoding="async"
           fetchPriority="high"
           className="absolute inset-0 w-full h-full object-cover bg-[#f9f7f6]"
-          style={{ objectPosition: "70% 35%" }}
+          style={{ objectPosition: "70% 1%" }}
         />
       </picture>
 
@@ -36,15 +36,15 @@ export default function Header() {
             bg-gradient-to-r from-pink-100 via-white to-pink-50 bg-clip-text 
             text-transparent animate-slide-up relative z-10 leading-tight"
           >
-            Ngọc Thắng & Huyền Trang
+            Đức Thiện & Minh Chúc
           </h1>
 
           <p className="text-lg md:text-xl font-light mt-4 text-pink-50 animate-fade-in relative z-10">
-            09 • 11 • 2025
+            04 • 01 • 2026
           </p>
 
           <div className="relative z-10">
-            <Countdown targetDate={new Date("2025-11-09T00:00:00")} />
+            <Countdown targetDate={new Date("2026-01-04T00:00:00")} />
           </div>
         </div>
       </ScrollReveal>

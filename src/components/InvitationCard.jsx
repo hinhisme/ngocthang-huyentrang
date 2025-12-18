@@ -17,16 +17,16 @@ const InvitationCard = () => {
       <div className="flex flex-col font-playfair md:flex-row justify-center items-center mb-10">
         <div className="md:w-1/3 mb-6 md:mb-0">
           <p className="font-semibold">NHÀ TRAI</p>
-          <p>ÔNG: Nguyễn Tuấn Anh</p>
-          <p>BÀ: Nguyễn Thị Hoài</p>
+          <p>ÔNG: Nguyễn Xuân Đức</p>
+          <p>BÀ: Vũ Thị Bích Thủy</p>
         </div>
 
         <div className="hidden md:block w-px h-16 mx-10"></div>
 
         <div className="md:w-1/3">
           <p className="font-semibold">NHÀ GÁI</p>
-          <p>ÔNG: Nguyễn Ngọc Thành</p>
-          <p>BÀ: Đặng Thị Sinh</p>
+          <p>ÔNG: Trần Mạnh Tâm</p>
+          <p>BÀ: Ngô Thị Hồng</p>
         </div>
       </div>
 
@@ -34,12 +34,12 @@ const InvitationCard = () => {
         ĐẾN DỰ BUỔI TIỆC CHUNG VUI CỦA GIA ĐÌNH CHÚNG TÔI
       </p>
 
-      <h3 className="font-[Cormorant_Garamond] text-[#78753c] text-4xl">
-        NGỌC THẮNG
+      <h3 className="text-4xl font-['Great_Vibes'] text-pink-500 mb-3 animate-fade-in relative z-10">
+        Đức Thiện
       </h3>
       <p className="text-[#78753c] font-playfair text-xl font-light mb-2">&</p>
-      <h3 className="font-[Cormorant_Garamond] text-[#78753c] text-4xl">
-        HUYỀN TRANG
+      <h3 className="text-4xl font-['Great_Vibes'] text-pink-500 mb-3 animate-fade-in relative z-10">
+        Minh Chúc
       </h3>
 
       <p className="font-playfair tracking-widest font-medium">THÂN MỜI</p>
