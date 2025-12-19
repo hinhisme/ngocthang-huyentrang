@@ -40,18 +40,23 @@ function App() {
       <RSVP />
 
       <ScrollReveal direction="up" delay={200}>
-        <div className="text-center my-10">
+        <div className="flex justify-center items-center my-10">
           <button
             onClick={handleOpenMessages}
-            className="group relative inline-flex items-center justify-center px-8 py-3 
-              text-lg font-medium text-white rounded-full 
-              bg-gradient-to-r from-pink-400 via-pink-300 to-rose-400 
-              shadow-lg shadow-pink-200 hover:shadow-pink-300 
-              transition-all duration-300 overflow-hidden"
+            className="relative flex items-center gap-3 px-8 py-3 font-semibold 
+            text-rose-600 rounded-xl border border-rose-300
+            bg-transparent
+            hover:bg-gradient-to-r active:from-rose-400 active:to-rose-600
+            hover:text-white
+            transition-all duration-300"
           >
-            <span className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-40 transition-opacity duration-300 rounded-full"></span>
-            <span className="relative z-10 flex items-center gap-2">
-              💌 Xem lời chúc
+            <span className="uppercase tracking-wide">Xem lời chúc</span>
+
+            <span
+              className="flex items-center justify-center w-10 h-10 rounded-full 
+              bg-white text-rose-600 font-bold shadow-inner border-l-4 border-white"
+            >
+              ❤️
             </span>
           </button>
         </div>
