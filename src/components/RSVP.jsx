@@ -59,10 +59,9 @@ const RSVP = () => {
           backgroundColor: "#f7f5f0",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center center",
-          backgroundSize: "contain", // ✅ Giữ ảnh trọn vẹn, không bị crop
+          backgroundSize: "contain",
         }}
       >
-        {/* Lớp nền mờ để dễ đọc chữ hơn */}
         <div className="absolute inset-0 bg-black/40" />
 
         <div className="relative bg-white/90 p-6 rounded-2xl shadow-xl max-w-xl w-[90%] text-center mb-10 animate-fadeIn">
