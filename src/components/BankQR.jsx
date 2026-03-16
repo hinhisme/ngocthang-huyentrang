@@ -22,10 +22,10 @@ export default function BankQR() {
               />
             </div>
 
-            <p className="text-3xl font-['Great_Vibes'] text-pink-500 mb-3 animate-fade-in relative z-10">Đức Thiện</p>
-            <p className="text-sm md:text-base">0967129002</p>
+            <p className="text-3xl font-['Great_Vibes'] text-pink-500 mb-3 animate-fade-in relative z-10">Phan Khoi</p>
+            <p className="text-sm md:text-base">2222 2222 2286</p>
             <p className="font-playfair font-semibold mt-1 text-sm md:text-base">
-              MB Bank
+              Techcombank
             </p>
           </div>
 
@@ -42,10 +42,10 @@ export default function BankQR() {
               />
             </div>
 
-            <p className="text-3xl font-['Great_Vibes'] text-pink-500 mb-3 animate-fade-in relative z-10">Minh Chúc</p>
-            <p className="text-sm md:text-base">4330674987</p>
+            <p className="text-3xl font-['Great_Vibes'] text-pink-500 mb-3 animate-fade-in relative z-10">Le Thuy</p>
+            <p className="text-sm md:text-base">1013391785</p>
             <p className="font-playfair font-semibold mt-1 text-sm md:text-base">
-              BIDV
+              Vietcombank
             </p>
           </div>
         </div>

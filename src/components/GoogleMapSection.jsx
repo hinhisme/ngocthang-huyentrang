@@ -14,10 +14,10 @@ const GoogleMapSection = () => {
         <ScrollReveal direction="up" delay={200}>
         <div className="text-center">
           <h3 className="text-xl font-medium mb-2 font-playfair">🏠 Nhà Trai</h3>
-          <p className="font-playfair mb-3">Số nhà 358, Đường Nguyễn Văn Linh, Phan Bôi, Dị Sử, Mỹ Hào, Tỉnh Hưng Yên</p>
+          <p className="font-playfair mb-3">Tổ dân phố Tiên Xá 2, phường Mỹ Hào, tỉnh Hưng Yên</p>
           <div className="rounded-2xl font-playfair overflow-hidden shadow-lg">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3726.5898719087468!2d106.06987257525378!3d20.928813880695603!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjDCsDU1JzQzLjciTiAxMDbCsDA0JzIwLjgiRQ!5e0!3m2!1sen!2s!4v1766106274902!5m2!1sen!2s"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d217.20231595705263!2d106.09376585283192!3d20.94935837456439!2m3!1f134.2851866402603!2f45.000000000004334!3f0!3m2!1i1024!2i768!4f35!5e1!3m2!1svi!2s!4v1773667968669!5m2!1svi!2s"
               width="100%"
               height="300"
               style={{ border: 0 }}
@@ -32,10 +32,10 @@ const GoogleMapSection = () => {
         <ScrollReveal direction="up" delay={200}>
         <div className="text-center">
           <h3 className="text-xl font-medium mb-2 font-playfair">🏡 Nhà Gái</h3>
-          <p className="font-playfair mb-3">Phố Tây, Tam Sơn, Từ Sơn, Bắc Ninh</p>
+          <p className="font-playfair mb-3">Thôn Kim Ốc, huyện Thọ Xuân, tỉnh Thanh Hóa</p>
           <div className="rounded-2xl font-playfair overflow-hidden shadow-lg">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3721.037743606046!2d105.97421867525995!3d21.15089618052908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjHCsDA5JzAzLjIiTiAxMDXCsDU4JzM2LjUiRQ!5e0!3m2!1sen!2s!4v1766119058528!5m2!1sen!2s"
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1424.0223347215829!2d105.5026341584347!3d19.954183863392057!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTnCsDU3JzE0LjkiTiAxMDXCsDMwJzA5LjYiRQ!5e1!3m2!1svi!2s!4v1773668212253!5m2!1svi!2s"
               width="100%"
               height="300"
               style={{ border: 0 }}

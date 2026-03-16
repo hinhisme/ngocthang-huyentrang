@@ -4,7 +4,7 @@ import ScrollReveal from "./ScrollReveal";
 export default function LoveStory() {
   const stories = [
     {
-      text: "Khoảnh khắc nhìn thấy em đứng trên bục giảng, mái tóc khẽ lay theo từng bước chân, anh chợt hiểu vì sao người ta nói có những người không cần cố gắng cũng đủ để làm tim kẻ khác rung động.",
+      text: "Khoảnh khắc lần đầu nhìn thấy em, mái tóc khẽ lay theo từng bước chân, anh chợt hiểu vì sao người ta nói có những người không cần cố gắng cũng đủ để làm tim kẻ khác rung động.",
       image: "/images/story1.webp",
     },
     //{
@@ -13,11 +13,11 @@ export default function LoveStory() {
     //},
     {
       text: "Lời tỏ tình giản dị nhưng đầy chân thành.",
-      image: "/images/story3.webp",
+      image: "/images/story2.webp",
     },
     {
       text: "Chúng ta nói lời ước hẹn trăm năm ❤️",
-      image: "/images/story4.webp",
+      image: "/images/story3.webp",
     },
   ];
 

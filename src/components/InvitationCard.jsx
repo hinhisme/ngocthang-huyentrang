@@ -17,16 +17,15 @@ const InvitationCard = () => {
       <div className="flex flex-col font-playfair md:flex-row justify-center items-center mb-10">
         <div className="md:w-1/3 mb-6 md:mb-0">
           <p className="font-semibold">NHÀ TRAI</p>
-          <p>ÔNG: Nguyễn Xuân Đức</p>
-          <p>BÀ: Vũ Thị Bích Thủy</p>
+          <p>ÔNG: Phan Văn Hiền</p>
+          <p>BÀ: Trịnh Thị Hiên</p>
         </div>
 
         <div className="hidden md:block w-px h-16 mx-10"></div>
 
         <div className="md:w-1/3">
           <p className="font-semibold">NHÀ GÁI</p>
-          <p>ÔNG: Trần Mạnh Tâm</p>
-          <p>BÀ: Ngô Thị Hồng</p>
+          <p>BÀ: Đinh Thị Xỉu</p>
         </div>
       </div>
 
@@ -35,11 +34,11 @@ const InvitationCard = () => {
       </p>
 
       <h3 className="text-4xl font-['Great_Vibes'] text-pink-500 mb-3 animate-fade-in relative z-10">
-        Đức Thiện
+        Phan Khởi
       </h3>
       <p className="text-[#78753c] font-playfair text-xl font-light mb-2">&</p>
       <h3 className="text-4xl font-['Great_Vibes'] text-pink-500 mb-3 animate-fade-in relative z-10">
-        Minh Chúc
+        Lê Thúy
       </h3>
 
       <p className="font-playfair tracking-widest font-medium">THÂN MỜI</p>

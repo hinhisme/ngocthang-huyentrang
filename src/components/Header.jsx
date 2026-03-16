@@ -12,8 +12,11 @@ export default function Header() {
           loading="eager"
           decoding="async"
           fetchPriority="high"
-          className="absolute inset-0 w-full h-full object-cover bg-[#f9f7f6]"
-          style={{ objectPosition: "70% 1%" }}
+          className="absolute inset-0 w-full h-full object-cover bg-[#f9f7f6]
+          object-[65%_8%] 
+          md:object-[60%_5%] 
+          lg:object-[55%_0%] 
+          xl:object-[50%_0%]"
         />
       </picture>
 
@@ -27,24 +30,27 @@ export default function Header() {
         >
           <span className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-white/10 to-transparent opacity-30 blur-md pointer-events-none"></span>
 
-          <p className="text-3xl font-['Great_Vibes'] text-pink-100 mb-3 animate-fade-in relative z-10">
+          {/* Save the date */}
+          <p className="text-5xl md:text-6xl font-['Great_Vibes'] text-pink-500 mb-3">
             Save The Date
           </p>
 
+          {/* TÊN */}
           <h1
-            className="text-2xl md:text-6xl font-playfair font-semibold 
-            bg-gradient-to-r from-pink-100 via-white to-pink-50 bg-clip-text 
-            text-transparent animate-slide-up relative z-10 leading-tight"
+            className="text-2xl md:text-5xl font-playfair font-semibold
+            text-white drop-shadow-lg leading-tight"
           >
-            Đức Thiện & Minh Chúc
+            Phan Khởi <span className="text-pink-500">&</span> Lê Thúy
           </h1>
 
-          <p className="text-lg md:text-xl font-light mt-4 text-pink-50 animate-fade-in relative z-10">
-            04 • 01 • 2026
+          {/* DATE */}
+          <p className="text-lg md:text-xl mt-4 text-pink-600 tracking-widest">
+            30 • 03 • 2026
           </p>
 
-          <div className="relative z-10">
-            <Countdown targetDate={new Date("2026-01-04T00:00:00")} />
+          {/* COUNTDOWN */}
+          <div className="mt-6">
+            <Countdown targetDate={new Date("2026-03-30T00:00:00")} />
           </div>
         </div>
       </ScrollReveal>

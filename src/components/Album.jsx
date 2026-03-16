@@ -22,7 +22,7 @@ export default function Album() {
           ALBUM ẢNH CƯỚI
         </h2>
 
-        <div className="columns-2 md:columns-3 lg:columns-3 gap-4 px-6 max-w-6xl mx-auto space-y-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 px-6 max-w-6xl mx-auto">
           {images.map((src, idx) => (
             <img
               key={idx}

@@ -20,13 +20,13 @@ export default function PartyInfo() {
             ĐƯỢC TỔ CHỨC VÀO
           </p>
           <p className="font-playfair text-gray-800 mb-4">
-            17h00 - Thứ 7, 03/01/2026
+            13h00 - Thứ 2, 30/03/2026
           </p>
 
           <p className="font-playfair text-gray-700 mb-2">TẠI ĐỊA ĐIỂM</p>
           <p className="font-playfair text-gray-800">TƯ GIA NHÀ TRAI</p>
           <p className="font-playfair text-gray-800">
-            Số nhà 358, Đường Nguyễn Văn Linh, Phan Bôi, Dị Sử, Mỹ Hào, Tỉnh Hưng Yên
+            Tổ dân phố Tiên Xá 2,phường Mỹ Hào, Tỉnh Hưng Yên
           </p>
 
           <img
@@ -50,13 +50,13 @@ export default function PartyInfo() {
             ĐƯỢC TỔ CHỨC VÀO
           </p>
           <p className="font-playfair text-gray-800 mb-4">
-            17h00 - Thứ 7, 03/01/2026
+            7h30 - Thứ 2, 30/03/2026
           </p>
 
           <p className="font-playfair text-gray-700 mb-2">TẠI ĐỊA ĐIỂM</p>
           <p className="font-playfair text-gray-800">TƯ GIA NHÀ GÁI</p>
           <p className="font-playfair text-gray-800">
-            Phố Tây, Tam Sơn, Từ Sơn, Bắc Ninh
+            Thôn Kim Ốc, huyện Thọ Xuân, tỉnh Thanh Hóa
           </p>
 
           <img
