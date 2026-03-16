@@ -25,7 +25,7 @@ const InvitationCard = () => {
 
         <div className="md:w-1/3">
           <p className="font-semibold">NHÀ GÁI</p>
-          <p>BÀ: Đinh Thị Xỉu</p>
+          <p>BÀ: Đinh Thị Sửu</p>
         </div>
       </div>
 
