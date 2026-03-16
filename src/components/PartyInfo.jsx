@@ -56,7 +56,7 @@ export default function PartyInfo() {
           <p className="font-playfair text-gray-700 mb-2">TẠI ĐỊA ĐIỂM</p>
           <p className="font-playfair text-gray-800">TƯ GIA NHÀ GÁI</p>
           <p className="font-playfair text-gray-800">
-            Thôn Kim Ốc, huyện Thọ Xuân, tỉnh Thanh Hóa
+            Thôn Kim Ốc, Xã Xuân Hoà, Tỉnh Thanh Hoá
           </p>
 
           <img
