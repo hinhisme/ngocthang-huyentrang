@@ -13,12 +13,8 @@ export default function PartyInfo() {
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
         <div className="relative bg-[#fbfaf7] border border-[#e6e2d9] p-10 rounded-2xl shadow-sm">
           <h3 className="text-xl font-playfair mb-6 text-gray-800">
-            TIỆC CƯỚI NHÀ TRAI
+            HÔN LỄ ĐƯỢC TỔ CHỨC VÀO
           </h3>
-
-          <p className="font-playfair text-gray-700 mb-2">
-            ĐƯỢC TỔ CHỨC VÀO
-          </p>
           <p className="font-playfair text-gray-800 mb-4">
             13h00 - Thứ 2, 30/03/2026
           </p>
@@ -43,12 +39,8 @@ export default function PartyInfo() {
 
         <div className="relative bg-[#fbfaf7] border border-[#e6e2d9] p-10 rounded-2xl shadow-sm">
           <h3 className="text-xl font-playfair mb-6 text-gray-800">
-            TIỆC CƯỚI NHÀ GÁI
+            LỄ ĂN HỎI
           </h3>
-
-          <p className="font-playfair text-gray-700 mb-2">
-            ĐƯỢC TỔ CHỨC VÀO
-          </p>
           <p className="font-playfair text-gray-800 mb-4">
             7h30 - Thứ 2, 30/03/2026
           </p>
