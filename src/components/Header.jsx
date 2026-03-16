@@ -40,8 +40,24 @@ export default function Header() {
             className="text-2xl md:text-5xl font-playfair font-semibold
             text-white drop-shadow-lg leading-tight"
           >
-            Phan Khởi <span className="text-pink-500">&</span> Lê Thúy
+            Phan Khởi <span className="heart">❤️</span> Lê Thúy
           </h1>
+          <style>{`
+            .heart{
+              display:inline-block;
+              animation: heartbeat 1.6s ease-in-out infinite;
+              filter: drop-shadow(0 0 6px rgba(255, 80, 120, 0.7));
+            }
+
+            @keyframes heartbeat{
+              0%{ transform:scale(1); }
+              15%{ transform:scale(1.25); }
+              30%{ transform:scale(1); }
+              45%{ transform:scale(1.18); }
+              60%{ transform:scale(1); }
+              100%{ transform:scale(1); }
+            }
+          `}</style>
 
           {/* DATE */}
           <p className="text-lg md:text-xl mt-4 text-pink-600 tracking-widest">
